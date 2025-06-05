@@ -14,7 +14,7 @@ def get_book_text(file_path):
 def main():
     text = get_book_text(file_path)
     final_number = num_words(text)
-    message = f"{final_number} words found in the document"
+    message = f"Found {final_number} total words"
     nums = char_count(text)
     new_nums = sorted_dict(nums)
     print("============ BOOKBOT ============")
@@ -22,7 +22,12 @@ def main():
     print("----------- Word Count ----------")
     print(message)
     print("--------- Character Count -------")
-    for k, v in new_nums
+    for k in new_nums:
+        if k["char"].isalpha():
+            print(f"{k['char']}: {k['num']}")
+
+    print("============= END ===============")
+
 
 main()
 
