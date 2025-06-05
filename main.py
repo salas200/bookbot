@@ -1,8 +1,16 @@
+import sys
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+
+
 from stats import num_words
 from stats import char_count
 from stats import sorted_dict
 
-file_path = "books/frankenstein.txt"
+file_path = sys.argv[1]
+
 def get_book_text(file_path):
     with open(file_path) as f:
         book_text = f.read()
